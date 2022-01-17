@@ -4,7 +4,7 @@ import { TransactionController } from "../controllers/TransactionController";
 const transactionRoutes =  Router();
 const transactionController = new TransactionController();
 
-transactionRoutes.get("/fund-transfer/{{transactionId}}", transactionController.searchId);
+transactionRoutes.get("/fund-transfer/{{id}}", transactionController.searchId);
 
 transactionRoutes.post("/fund-transfer", transactionController.fundTransfer);
 
