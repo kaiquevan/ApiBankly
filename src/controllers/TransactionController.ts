@@ -15,7 +15,7 @@ class TransactionController{
             
             const transaction = await transactionService.searchId(id as string);
 
-            if(transaction.id == null){
+            if(transaction == null){
                 
                 return response.status(404).json({
                     status: transaction.status,
