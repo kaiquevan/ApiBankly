@@ -21,7 +21,7 @@ class TransactionService{
 
         const transactionVoid =  await this.transactionRepository.searchId(id);
 
-        if (!transactionVoid){
+        if (transactionVoid == null){
             throw new AppError("Invalid account number");
         }
 
