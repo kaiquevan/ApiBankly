@@ -7,8 +7,8 @@ class TransactionRepository implements ITransactionRepository{
 
     }
 
-    async searchId(transactionId: string): Promise<TransactionDocument> {
-        return await Transaction.findById(transactionId);
+    async searchId(id: string): Promise<TransactionDocument> {
+        return await Transaction.findById(id);
     }
 
     async fundTransfer({accountOrigin ,  accountDestination, value}: ITransactionDTO): Promise<TransactionDocument> {

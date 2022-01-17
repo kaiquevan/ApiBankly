@@ -9,11 +9,11 @@ class TransactionController{
 
          //GET BY ID
         async searchId(request: Request, response: Response): Promise<Response>{
-            const { transactionId } = request.query;
+            const { id } = request.query;
             
             const transactionService = new TransactionService(transactionRepository);
             
-            const transaction = await transactionService.searchId(transactionId as string);
+            const transaction = await transactionService.searchId(id as string);
             
             return response.json(transaction);
         }
@@ -23,6 +23,7 @@ class TransactionController{
             const{accountOrigin ,  accountDestination, value} = request.body;
             
             const transferService = new TransactionService(transactionRepository);
+            
             
             const transaction = await transferService.fundTransfer({accountOrigin ,  accountDestination, value})
             

@@ -14,8 +14,8 @@ class TransactionService{
 
     constructor(private transactionRepository: ITransactionRepository ){ }
 
-    async searchId(transactionId:string): Promise<TransactionDocument>{
-        return await this.transactionRepository.searchId(transactionId);   
+    async searchId(id:string): Promise<TransactionDocument>{
+        return await this.transactionRepository.searchId(id);   
     }
 
     async fundTransfer({accountOrigin ,  accountDestination, value}: IRequest):Promise<TransactionDocument>{

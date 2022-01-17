@@ -7,7 +7,7 @@ interface ITransactionDTO{
 }
 
 interface ITransactionRepository{
-    searchId(transactionId:string): Promise<TransactionDocument>;
+    searchId(id:string): Promise<TransactionDocument>;
     fundTransfer({accountOrigin,  accountDestination, value}: ITransactionDTO):Promise<TransactionDocument>; 
 }
 
