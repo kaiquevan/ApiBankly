@@ -15,15 +15,6 @@ class TransactionController{
             
             const transaction = await transactionService.searchId(id as string);
 
-            if(transaction == null){
-                
-                return response.status(404).json({
-                    status: transaction.status,
-                    message: "Invalid account number"
-                });
-            }
-
-
             return response.status(201).json({
                 status: transaction.status,
             });
