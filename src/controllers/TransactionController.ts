@@ -11,9 +11,9 @@ class TransactionController{
         async searchId(request: Request, response: Response): Promise<Response>{
             const { transactionId } = request.query;
             
-            const produtoService = new TransactionService(transactionRepository);
+            const transactionService = new TransactionService(transactionRepository);
             
-            const transaction = await produtoService.searchId(transactionId as string);
+            const transaction = await transactionService.searchId(transactionId as string);
             
             return response.json(transaction);
         }

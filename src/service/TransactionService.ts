@@ -13,10 +13,10 @@ interface IRequest{
 
 class TransactionService{
 
-    constructor(private produtosRepository: ITransactionRepository ){ }
+    constructor(private transactionRepository: ITransactionRepository ){ }
 
     async searchId(transactionId:string): Promise<TransactionDocument>{
-        return await this.produtosRepository.searchId(transactionId);   
+        return await this.transactionRepository.searchId(transactionId);   
     }
 
 }
