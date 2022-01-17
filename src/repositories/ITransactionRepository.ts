@@ -1,14 +1,14 @@
 import { TransactionDocument } from "../model/Transaction";
 
 interface ITransactionDTO{
-    accountNumber: string;
+    accountOrigin: string;
+    accountDestination: string;
     value: number;
-    type: string;
-    status: string;
 }
 
 interface ITransactionRepository{
     searchId(transactionId:string): Promise<TransactionDocument>;
+    fundTransfer({accountOrigin,  accountDestination, value}: ITransactionDTO):Promise<TransactionDocument>; 
 }
 
 export {ITransactionRepository,ITransactionDTO}

@@ -7,7 +7,7 @@ const  transactionRepository = new TransactionRepository();
 class TransactionController{
 
 
-         //Post
+         //GET BY ID
         async searchId(request: Request, response: Response): Promise<Response>{
             const { transactionId } = request.query;
             
@@ -17,6 +17,21 @@ class TransactionController{
             
             return response.json(transaction);
         }
+
+        // fund-transfer
+        async fundTransfer(request: Request, response: Response): Promise<Response>{
+            const{accountOrigin ,  accountDestination, value} = request.body;
+            
+            const transferService = new TransactionService(transactionRepository);
+            
+            const transaction = await transferService.fundTransfer({accountOrigin ,  accountDestination, value})
+            
+            return response.status(201).json({
+                transactionId: transaction.id
+            });
+        }
+
+
 
 
 

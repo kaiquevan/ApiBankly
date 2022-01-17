@@ -1,7 +1,8 @@
 import mongoose, { Document, Model, Schema} from 'mongoose';
 
 export type TransactionAttributes = {
-    accountNumber: string;
+    accountOrigin: string;
+    accountDestination:string;
     value: number;
     type: string;
     status: string;
@@ -13,7 +14,11 @@ type TransactionModel = Model<TransactionDocument>;
 
 const TransactionSchema = new Schema(
     {
-        accountNumber:{
+        accountOrigin:{
+            type: String,
+            required: true
+        },
+        accountDestination:{
             type: String,
             required: true
         },
@@ -36,6 +41,5 @@ const TransactionSchema = new Schema(
 
     }
 )
-
 
 export default mongoose.model<TransactionDocument, TransactionModel>('Transaction', TransactionSchema);
