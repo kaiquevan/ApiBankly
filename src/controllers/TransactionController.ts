@@ -13,10 +13,12 @@ class TransactionController{
             
             const produtoService = new TransactionService(transactionRepository);
             
-            const produto = await produtoService.searchId(transactionId as string);
+            const transaction = await produtoService.searchId(transactionId as string);
             
-            return response.json(produto);
-    }
+            return response.json(transaction);
+        }
+
+
 
 }
 
