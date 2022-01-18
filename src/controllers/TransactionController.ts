@@ -36,8 +36,6 @@ class TransactionController{
             });
         }
 
-        
-        // MONTAR UM GET PRO AXIO E UM MODEL QUE RECEBA O JSON DA API EXTERNA
 
         async getAccount(request: Request, response: Response): Promise<Response>{
 

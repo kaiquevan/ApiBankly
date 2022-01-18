@@ -17,10 +17,4 @@ transactionRoutes.post("/post-account", transactionController.postAccount);
 transactionRoutes.get("/find-account", transactionController.findAccount);
 
 
-//const getAccount = () => { 
-
-   //return axios.get("https://acessoaccount.herokuapp.com/api/Account");
-   // return "ABC";
-//}
-
 export{transactionRoutes};

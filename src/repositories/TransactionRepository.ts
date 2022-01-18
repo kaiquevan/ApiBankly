@@ -23,15 +23,6 @@ class TransactionRepository implements ITransactionRepository{
         } 
        return await Transaction.create(transfer);
     }
-    
-    // async account(){
-    //     const getAccount = () => { 
-
-    //     return axios.get("https://acessoaccount.herokuapp.com/api/Account");
-    //     // return "ABC";
-    //     }
-    // }
-
 }
 
 export {TransactionRepository}
