@@ -29,11 +29,12 @@ class TransactionService{
 
     }
 
-    async getAccount(): Promise<any>{
+    async getAccount(){
         console.log('------------------ chamou')
 
         try{
             const apiResult = axios.get("https://acessoaccount.herokuapp.com/api/Account");
+            console.log(apiResult)
             return  apiResult;
         }catch(err)
         {
