@@ -17,7 +17,8 @@ class TransactionController{
 
             //return response.status(201).json({
                 //status: transaction.status,
-                return response.status(200).json(transaction);
+                console.log(transaction);
+                return response.status(200).json({abc:"abc"});
 
             //});
                 
