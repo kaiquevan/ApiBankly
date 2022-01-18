@@ -31,16 +31,23 @@ class TransactionService{
 
     async getAccount(): Promise<any>{
         console.log('------------------ chamou')
-        const promise = new Promise( (resolve, reject) => {
+
+        try{
             const apiResult = axios.get("https://acessoaccount.herokuapp.com/api/Account");
-            console.log(apiResult)
-            if (apiResult){
-                resolve(apiResult)
-            }else{
-                reject( new Error('não foi'))
-            }
-        })
-        return  promise
+            return  apiResult;
+        }catch(err)
+        {
+            console.log('-----------' + err)
+        }
+        // const promise = new Promise( (resolve, reject) => {
+        //     const apiResult = axios.get("https://acessoaccount.herokuapp.com/api/Account");
+        //     if (apiResult){
+        //         resolve(apiResult)
+        //     }else{
+        //         reject( new Error('não foi'))
+        //     }
+        // })
+        
             // const apiResult = await axios.get("https://acessoaccount.herokuapp.com/api/Account");
             // return {apiResult:'chamou a api'};
       
