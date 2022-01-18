@@ -40,10 +40,10 @@ class TransactionController{
 
             const transactionService = new TransactionService(transactionRepository);
             
-            const transaction = await transactionService.getAccount();
+            //const transaction = await transactionService.getAccount();
 
-            return transaction;
-                
+           // return transaction;
+              return "abc";  
             
         }
 
