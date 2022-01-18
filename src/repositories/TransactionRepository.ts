@@ -1,6 +1,6 @@
 import { isNamedExportBindings } from "typescript";
 import Transaction, { TransactionDocument, TransactionAttributes } from "../model/Transaction";
-import { IApiDTO, ITransactionDTO, ITransactionRepository } from "./ITransactionRepository";
+import { ITransactionDTO, ITransactionRepository } from "./ITransactionRepository";
 const axios = require("axios");
 
 class TransactionRepository implements ITransactionRepository {
@@ -25,12 +25,7 @@ class TransactionRepository implements ITransactionRepository {
         return await Transaction.create(transfer);
     }
 
-    async teste(): Promise<IApiDTO> {
-        
-        return await {data:'qualquer coisa'}
-       
-        
-    }
+    
 
     // async account(){
     //     const getAccount = () => { 

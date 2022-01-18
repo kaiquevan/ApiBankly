@@ -1,4 +1,4 @@
-import { IApiDTO, ITransactionRepository } from '../repositories/ITransactionRepository';
+import {  ITransactionRepository } from '../repositories/ITransactionRepository';
 import { AppError } from '../erros/AppError';
 import Transaction, { TransactionDocument } from '../model/Transaction';
 import { TransactionRepository } from '../repositories/TransactionRepository';
@@ -29,9 +29,16 @@ class TransactionService{
 
     }
 
-    async getAccount(): Promise<IApiDTO>{
-
-        return  this.transactionRepository.teste();
+    async getAccount(): Promise<any>{
+        const promise = new Promise( (resolve, reject) => {
+            const apiResult = axios.get("https://acessoaccount.herokuapp.com/api/Account");
+            if (apiResult){
+                resolve(apiResult)
+            }else{
+                reject('não foi')
+            }
+        })
+        return  promise
             // const apiResult = await axios.get("https://acessoaccount.herokuapp.com/api/Account");
             // return {apiResult:'chamou a api'};
       
