@@ -12,8 +12,8 @@ transactionRoutes.post("/fund-transfer", transactionController.fundTransfer);
 
 const getAccount = () => { 
 
-   return axios.get("https://acessoaccount.herokuapp.com/api/Account");
-
+   //return axios.get("https://acessoaccount.herokuapp.com/api/Account");
+    return "ABC";
 }
 
 transactionRoutes.get("/Account", transactionController.getAccount);
