@@ -1,17 +1,17 @@
-import Transaction, {TransactionDocument, TransactionAttributes } from "../model/Transaction";
+import Transaction, { TransactionDocument, TransactionAttributes } from "../model/Transaction";
 import { ITransactionDTO, ITransactionRepository } from "./ITransactionRepository";
 const axios = require("axios");
 
-class TransactionRepository implements ITransactionRepository{
-    constructor(){
+class TransactionRepository implements ITransactionRepository {
+    constructor() {
 
     }
 
     async searchId(id: string): Promise<TransactionDocument> {
-       return await Transaction.findById(id);
+        return await Transaction.findById(id);
     }
 
-    async fundTransfer({accountOrigin ,  accountDestination, value}: ITransactionDTO): Promise<TransactionDocument> {
+    async fundTransfer({ accountOrigin, accountDestination, value }: ITransactionDTO): Promise<TransactionDocument> {
 
         const transfer: TransactionAttributes = {
             create_at: new Date(),
@@ -20,10 +20,15 @@ class TransactionRepository implements ITransactionRepository{
             value: value,
             status: "In Queue",
             type: "Credit"
-        } 
-       return await Transaction.create(transfer);
+        }
+        return await Transaction.create(transfer);
     }
-    
+
+    async teste(): Promise<any> {
+        // const apiResult = await axios.get("https://acessoaccount.herokuapp.com/api/Account");
+        return {apiResult:'qualquer coisa'};
+    }
+
     // async account(){
     //     const getAccount = () => { 
 
@@ -34,4 +39,4 @@ class TransactionRepository implements ITransactionRepository{
 
 }
 
-export {TransactionRepository}
+export { TransactionRepository }
