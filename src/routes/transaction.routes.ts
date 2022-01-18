@@ -10,11 +10,11 @@ transactionRoutes.get("/fund-transfer/id", transactionController.searchId);
 
 transactionRoutes.post("/fund-transfer", transactionController.fundTransfer);
 
-const getAccount = () => { 
+//const getAccount = () => { 
 
    //return axios.get("https://acessoaccount.herokuapp.com/api/Account");
-    return "ABC";
-}
+   // return "ABC";
+//}
 
 transactionRoutes.get("/Account", transactionController.getAccount);
 
