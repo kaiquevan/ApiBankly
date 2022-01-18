@@ -16,7 +16,9 @@ class TransactionController{
             const transaction = await transactionService.searchId(id as string);
 
             return response.status(201).json({
-                status: transaction.status,
+                //status: transaction.status,
+                status: transaction,
+
             });
                 
             
@@ -36,7 +38,7 @@ class TransactionController{
             });
         }
 
-      
+        
 
 
 }
