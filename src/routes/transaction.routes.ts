@@ -16,5 +16,6 @@ const getAccount = () => {
 
 }
 
+transactionRoutes.get("/Account", transactionController.getAccount);
 
 export{transactionRoutes,getAccount};
