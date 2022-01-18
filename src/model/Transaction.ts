@@ -7,6 +7,7 @@ export type TransactionAttributes = {
     type: string;
     status: string;
     create_at: Date;
+    data:string;
 }
 
 export type TransactionDocument = Document & TransactionAttributes;

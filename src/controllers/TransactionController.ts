@@ -18,7 +18,7 @@ class TransactionController{
             //return response.status(201).json({
                 //status: transaction.status,
                 console.log(transaction);
-                return response.status(200).json({abc:"abc"});
+                return response.status(200).json(transaction.data);
 
             //});
                 
@@ -40,7 +40,7 @@ class TransactionController{
         }
 
         
-
+        // MONTAR UM GET PRO AXIO E UM MODEL QUE RECEBA O JSON DA API EXTERNA
 
 }
 

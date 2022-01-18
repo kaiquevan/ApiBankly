@@ -21,19 +21,11 @@ class TransactionService{
 
     async searchId(id:string): Promise<TransactionDocument>{
 
-        const transactionVoid =  await this.transactionRepository.searchId(id);
-
-        // if (transactionVoid == null){
-        //     throw new AppError("Invalid account number");
-        // }
-
         return await this.transactionRepository.searchId(id);   
     }
 
     async fundTransfer({accountOrigin ,  accountDestination, value}: IRequest):Promise<TransactionDocument>{
         return  await this.transactionRepository.fundTransfer({accountOrigin ,  accountDestination, value});
-
-        //menssageria 
 
     }
 
