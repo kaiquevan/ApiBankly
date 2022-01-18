@@ -2,6 +2,8 @@ import { ITransactionRepository } from '../repositories/ITransactionRepository';
 import { AppError } from '../erros/AppError';
 import Transaction, { TransactionDocument } from '../model/Transaction';
 import { TransactionRepository } from '../repositories/TransactionRepository';
+import { getAccount } from '../routes/transaction.routes';
+
 
 interface IRequest{
     transactionId?: string;
@@ -21,15 +23,22 @@ class TransactionService{
 
         const transactionVoid =  await this.transactionRepository.searchId(id);
 
-        if (transactionVoid == null){
-            throw new AppError("Invalid account number");
-        }
+        // if (transactionVoid == null){
+        //     throw new AppError("Invalid account number");
+        // }
 
         return await this.transactionRepository.searchId(id);   
     }
 
     async fundTransfer({accountOrigin ,  accountDestination, value}: IRequest):Promise<TransactionDocument>{
         return  await this.transactionRepository.fundTransfer({accountOrigin ,  accountDestination, value});
+
+        //menssageria 
+
+    }
+
+    async getAccount(): Promise<any>{
+        return await getAccount();
     }
 
 }

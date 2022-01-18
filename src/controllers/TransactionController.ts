@@ -36,7 +36,16 @@ class TransactionController{
             });
         }
 
+        async getAccount(): Promise<any>{
 
+            const transactionService = new TransactionService(transactionRepository);
+            
+            const transaction = await transactionService.getAccount();
+
+            return transaction;
+                
+            
+        }
 
 
 
