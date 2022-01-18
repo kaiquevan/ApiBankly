@@ -15,11 +15,11 @@ class TransactionController{
             
             const transaction = await transactionService.searchId(id as string);
 
-            return response.status(201).json({
+            //return response.status(201).json({
                 //status: transaction.status,
-                status: transaction,
+                return response.status(200).json(transaction);
 
-            });
+            //});
                 
             
         }
