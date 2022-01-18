@@ -2,7 +2,7 @@ import { ITransactionRepository } from '../repositories/ITransactionRepository';
 import { AppError } from '../erros/AppError';
 import Transaction, { TransactionDocument } from '../model/Transaction';
 import { TransactionRepository } from '../repositories/TransactionRepository';
-import { getAccount } from '../routes/transaction.routes';
+//import { getAccount } from '../routes/transaction.routes';
 
 
 interface IRequest{
@@ -37,9 +37,9 @@ class TransactionService{
 
     }
 
-    async getAccount(): Promise<any>{
-        return "ABC";
-    }
+    // async getAccount(): Promise<any>{
+    //     return "ABC";
+    // }
 
 }
 
