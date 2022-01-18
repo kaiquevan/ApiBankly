@@ -38,7 +38,7 @@ class TransactionService{
     }
 
     async getAccount(): Promise<any>{
-        return await getAccount();
+        return "ABC";
     }
 
 }
