@@ -9,6 +9,7 @@ const transactionController = new TransactionController();
 transactionRoutes.get("/fund-transfer/id", transactionController.searchId);
 
 transactionRoutes.post("/fund-transfer", transactionController.fundTransfer);
+
 transactionRoutes.get("/Account", transactionController.getAccount);
 
 //const getAccount = () => { 
