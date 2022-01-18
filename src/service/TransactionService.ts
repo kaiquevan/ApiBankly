@@ -60,7 +60,7 @@ class TransactionService{
                     return x
                 }) ;
         }).catch( err => {
-            return {error: 'Não foi possivel criar a conta, tente novamente mais tarde',
+            return {error: 'Não foi possivel encontrar a conta, tente novamente mais tarde',
                     status: 500,};
         })
       

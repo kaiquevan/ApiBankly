@@ -53,9 +53,6 @@ class TransactionController{
 
             const transferService = new TransactionService(transactionRepository);
            
-           
-           //const transaction = await transferService.postAccount(request)
-           
            const transaction = await transferService.postAccount(request)
 
            return response.status(200).json(transaction);
