@@ -30,8 +30,9 @@ class TransactionService{
     }
 
     async getAccount(){
-            const apiResult = await axios.get("https://acessoaccount.herokuapp.com/api/Account");
-            return apiResult;
+        return {abc:'teste'}
+            // const apiResult = await axios.get("https://acessoaccount.herokuapp.com/api/Account");
+            // return apiResult;
       
     }
 }
