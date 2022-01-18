@@ -8,15 +8,7 @@ class TransactionRepository implements ITransactionRepository{
     }
 
     async searchId(id: string): Promise<TransactionDocument> {
-
-
-
-       //return await Transaction.findById(id);
-
-
-
-       
-        return axios.get("https://acessoaccount.herokuapp.com/api/Account");
+       return await Transaction.findById(id);
     }
 
     async fundTransfer({accountOrigin ,  accountDestination, value}: ITransactionDTO): Promise<TransactionDocument> {
