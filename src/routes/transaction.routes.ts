@@ -16,6 +16,6 @@ transactionRoutes.post("/fund-transfer", transactionController.fundTransfer);
    // return "ABC";
 //}
 
-transactionRoutes.get("/Account", transactionController.getAccount);
+//transactionRoutes.get("/Account", transactionController.getAccount);
 
 export{transactionRoutes};

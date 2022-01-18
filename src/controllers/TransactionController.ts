@@ -36,19 +36,7 @@ class TransactionController{
             });
         }
 
-        async getAccount(response: Response): Promise<Response>{
-
-            //const transactionService = new TransactionService(transactionRepository);
-            
-            //const transaction = await transactionService.getAccount();
-
-           // return transaction;
-           return response.status(201).json({
-            xesque: "dele",
-        }); 
-            
-        }
-
+      
 
 
 }
