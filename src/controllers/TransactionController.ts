@@ -39,14 +39,14 @@ class TransactionController{
         
         // MONTAR UM GET PRO AXIO E UM MODEL QUE RECEBA O JSON DA API EXTERNA
 
-        async getAccount(response: Response): Promise<Response>{
+        async getAccount(request: Request, response: Response): Promise<any>{
 
             const transferService = new TransactionService(transactionRepository);
             
             
             const transaction = await transferService.getAccount()
             
-            return response.status(201).json({qlq: 'abc'});
+            return ({qlq: 'abc'});
             
 
         }
