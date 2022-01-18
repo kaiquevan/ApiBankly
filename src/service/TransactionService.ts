@@ -3,7 +3,7 @@ import { AppError } from '../erros/AppError';
 import Transaction, { TransactionDocument } from '../model/Transaction';
 import { TransactionRepository } from '../repositories/TransactionRepository';
 //import { getAccount } from '../routes/transaction.routes';
-
+const axios = require("axios");
 
 interface IRequest{
     transactionId?: string;
@@ -29,10 +29,9 @@ class TransactionService{
 
     }
 
-    // async getAccount(): Promise<any>{
-    //     return "ABC";
-    // }
-
+    async getAccount(): Promise<any>{
+        return axios.get("https://acessoaccount.herokuapp.com/api/Account");
+    }
 }
 
 export {TransactionService}

@@ -15,12 +15,9 @@ class TransactionController{
             
             const transaction = await transactionService.searchId(id as string);
 
-            //return response.status(201).json({
-                //status: transaction.status,
-                console.log(transaction);
-                return response.status(200).json(transaction.data);
-
-            //});
+            return response.status(201).json({
+                status: transaction.status,
+            });
                 
             
         }
@@ -41,6 +38,20 @@ class TransactionController{
 
         
         // MONTAR UM GET PRO AXIO E UM MODEL QUE RECEBA O JSON DA API EXTERNA
+
+        async getAccount(response: Response): Promise<Response>{
+
+            const transferService = new TransactionService(transactionRepository);
+            
+            
+            const transaction = await transferService.getAccount()
+            
+            return response.status(200).json(
+               transaction
+            );
+            
+
+        }
 
 }
 
