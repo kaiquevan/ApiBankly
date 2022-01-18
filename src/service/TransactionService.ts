@@ -31,11 +31,11 @@ class TransactionService{
 
     async getAccount(){
         console.log('------------------ chamou')
-
+       https://acessoaccount.herokuapp.com/api/Account
+    
         try{
-            const apiResult = axios.get("https://acessoaccount.herokuapp.com/api/Account");
-            console.log(apiResult)
-            return  apiResult;
+            return JSON.parse(JSON.stringify(axios.get("https://acessoaccount.herokuapp.com/api/Account").then(function(response){return response})));
+        
         }catch(err)
         {
             console.log('-----------' + err)

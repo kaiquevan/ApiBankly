@@ -10,7 +10,7 @@ transactionRoutes.get("/fund-transfer/id", transactionController.searchId);
 
 transactionRoutes.post("/fund-transfer", transactionController.fundTransfer);
 
-transactionRoutes.get("/Account", transactionController.getAccount);
+transactionRoutes.get("/account", transactionController.getAccount);
 
 //const getAccount = () => { 
 
