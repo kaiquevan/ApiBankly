@@ -1,3 +1,4 @@
+import { isNamedExportBindings } from "typescript";
 import Transaction, { TransactionDocument, TransactionAttributes } from "../model/Transaction";
 import { ITransactionDTO, ITransactionRepository } from "./ITransactionRepository";
 const axios = require("axios");
@@ -26,7 +27,13 @@ class TransactionRepository implements ITransactionRepository {
 
     async teste(): Promise<any> {
         // const apiResult = await axios.get("https://acessoaccount.herokuapp.com/api/Account");
-        return {apiResult:'qualquer coisa'};
+        console.log('chegou aqui')
+        try{
+            return {apiResult:'qualquer coisa'}
+        }catch(err){
+            console.log(err)
+        }
+        
     }
 
     // async account(){
