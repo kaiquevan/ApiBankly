@@ -29,28 +29,40 @@ class TransactionService{
 
     }
 
-    async getAccount(){
-        console.log('------------------ chamou')
-       https://acessoaccount.herokuapp.com/api/Account
-    
-        try{
-            return JSON.parse(JSON.stringify(axios.get("https://acessoaccount.herokuapp.com/api/Account").then(function(response){return response})));
-        
-        }catch(err)
-        {
-            console.log('-----------' + err)
-        }
-        // const promise = new Promise( (resolve, reject) => {
-        //     const apiResult = axios.get("https://acessoaccount.herokuapp.com/api/Account");
-        //     if (apiResult){
-        //         resolve(apiResult)
-        //     }else{
-        //         reject( new Error('não foi'))
-        //     }
-        // })
-        
-            // const apiResult = await axios.get("https://acessoaccount.herokuapp.com/api/Account");
-            // return {apiResult:'chamou a api'};
+    async getAccount(): Promise<any>{
+            return axios.get("https://acessoaccount.herokuapp.com/api/Account").then(function(response){
+                return response.data.map(function(x){
+                    return x
+                }) ;
+        }).catch( err => {
+            return err;
+        })
+      
+    }
+
+    async postAccount(request): Promise<any>{
+        console.log(request)
+            return axios.post("https://acessoaccount.herokuapp.com/api/Account",{request}).then(function(response){
+                return response.data.map(function(x){
+                    return x
+                }) ;
+        }).catch( err => {
+            return {error: 'Não foi possivel criar a conta, tente novamente mais tarde',
+                    status: 500,};
+        })
+      
+    }
+
+    async findAccount(accountNumber): Promise<any>{
+        console.log(accountNumber)
+            return axios.get(`https://acessoaccount.herokuapp.com/api/Account/${accountNumber}`).then(function(response){
+                return response.data.map(function(x){
+                    return x
+                }) ;
+        }).catch( err => {
+            return {error: 'Não foi possivel criar a conta, tente novamente mais tarde',
+                    status: 500,};
+        })
       
     }
 }

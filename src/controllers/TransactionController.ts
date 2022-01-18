@@ -1,4 +1,4 @@
-import {Request, Response} from 'express';
+import {Request, Response, } from 'express';
 import { TransactionService } from '../service/TransactionService';
 import { TransactionRepository } from '../repositories/TransactionRepository';
 
@@ -50,6 +50,34 @@ class TransactionController{
             
 
         }
+
+        async postAccount(request: Request, response: Response): Promise<Response>{
+
+            const transferService = new TransactionService(transactionRepository);
+           
+           
+           //const transaction = await transferService.postAccount(request)
+           
+           const transaction = await transferService.postAccount(request)
+
+           return response.status(200).json(transaction);
+           
+
+       }
+
+       async findAccount(request: Request, response: Response): Promise<Response>{
+
+        const{accountNumber} = request.query;
+
+        const transferService = new TransactionService(transactionRepository);
+            
+            
+            const transaction = await transferService.findAccount(accountNumber)
+            
+            return response.status(200).json(transaction);
+       
+
+   }
 
 }
 
