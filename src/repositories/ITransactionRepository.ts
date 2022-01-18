@@ -13,7 +13,7 @@ interface IApiDTO{
 interface ITransactionRepository{
     searchId(id:string): Promise<TransactionDocument>;
     fundTransfer({accountOrigin,  accountDestination, value}: ITransactionDTO):Promise<TransactionDocument>; 
-    teste(): Promise<any>;
+    teste(): Promise<IApiDTO>;
 }
 
 export {ITransactionRepository,ITransactionDTO,IApiDTO}
