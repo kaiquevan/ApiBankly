@@ -45,10 +45,8 @@ class TransactionController{
             
             
             const transaction = await transferService.getAccount()
-
-            console.log(' retorno - ' + JSON.stringify(transaction)) 
             
-            return response.status(201).json(transaction.data);
+            return response.status(201).json({qlq: 'abc'});
             
 
         }
